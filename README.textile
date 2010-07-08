@@ -1,6 +1,6 @@
 h2. leepa Fork Notes
 
-This verson oh @oh-my-zsh@ has a couple of extra features:
+This verson of @oh-my-zsh@ has a couple of extra features:
 
 1. Adds a mercurial prompt - you need the "hg-prompt":http://stevelosh.com/projects/hg-prompt/ plugin installed
 
