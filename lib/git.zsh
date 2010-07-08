@@ -6,9 +6,13 @@ function hg_prompt_info {
 patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
 }
 
+function hg_in_repo() {
+  hg branch 2> /dev/null | awk '{print "on "}'
+}
+
 # get the name of the branch we are on
 function git_prompt_info() {
-  echo "$(hg_prompt_info)"
+  hg_prompt_info
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
