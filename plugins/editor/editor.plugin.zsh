@@ -12,7 +12,7 @@ if [[ -x `which mate` && $(not_run_from_ssh) = 1 ]]; then
     function reload_textmate(){
       osascript -e 'tell app "TextMate" to reload bundles'
     }
-    function bundle () {
+    function tmbundle () {
       cd "$HOME/Library/Application Support/TextMate/Bundles/$1.tmbundle"
     }
     _bundle() {
